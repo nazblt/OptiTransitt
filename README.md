@@ -102,6 +102,105 @@ BFS, sadece mesafe hesaplar, A* ise daha stratejik bir yaklaşım kullanır ve d
 
 ## 4. Örnek Kullanım ve Test Sonuçları:
 
+### Örnek Kullanım: 
+
+### Metro Ağı Yapısı ve İstasyon Eklemeleri: 
+
+Öncelikle metro ağına istasyonlar ekleniyor. 
+Her istasyonun bir adı ve bir hattı bulunuyor. 
+Örneğin, "Kırmızı Hat" adıyla birkaç istasyon eklenmiş:
+
+istasyonlar = [
+    ("KR1", "Antakya", "Kırmızı Hat"),
+    ("KR2", "Defne", "Kırmızı Hat"),
+    ("KR3", "Samandağ", "Kırmızı Hat"),
+    ("KR4", "Yayladağı", "Kırmızı Hat"),
+    ("KR5", "Arsuz", "Kırmızı Hat"),
+]
+Bu istasyonlar metro.istasyon_ekle() fonksiyonu ile ekleniyor ve her birinin bağlı olduğu hat belirleniyor.
+
+### Bağlantılar ve Zamanlar:
+İstasyonlar arasındaki bağlantılar, baglantilar listesi ile belirtiliyor. Bağlantılar, iki istasyon arasında geçen süreyi içeriyor. Örnek bağlantı eklemeleri:
+
+baglantilar = [
+    ("KR1", "KR2", 5),  # Antakya → Defne, 5 dakika
+    ("KR2", "KR3", 10), # Defne → Samandağ, 10 dakika
+    ("M1", "M2", 8),    # Antakya → Kırıkhan (Mavi Hat), 8 dakika
+]
+Bu bağlantılar metro.baglanti_ekle() fonksiyonu ile ekleniyor.
+
+### Kullanıcı Etkileşimi ve Seçenekler:
+
+Kullanıcı, başlangıç ve hedef istasyonlarını seçiyor. İstasyonlar numara veya isimle seçilebilir. Ardından, kullanıcıya üç seçenek sunuluyor:
+
+En hızlı rota (en kısa süre): Bu seçenek, başlangıç ve hedef istasyonları arasında en hızlı (en kısa süreli) rotayı bulur ve animasyonla gösterir.
+
+En az aktarmalı rota: Bu seçenek, aktarma yapmadan en kısa yolu seçer.
+
+Metro ağı haritası: Tüm metro ağı harita üzerinde gösterilir.
+
+## Örnek Kullanım: 
+Kullanıcı, metro ağına dair seçim yaptıktan sonra, aşağıdaki gibi bir etkileşim gerçekleşir:
+
+Örnek 1: En Hızlı Rota Seçeneği
+
+Başlangıç istasyonu olarak "Antakya", hedef istasyonu olarak "Reyhanlı" girilir.
+
+Kullanıcı "1" tuşuna basarak en hızlı rotayı seçer.
+
+Çıktı şu şekilde olur:
+
+### EN HIZLI ROTA:
+-------------------------
+Rota:
+Antakya → Kırıkhan → Hassa → Osmaniye → Reyhanlı
+
+Toplam süre: 60 dakika
+
+Rotanız animasyonla gösteriliyor...
+Animasyon: İstasyonlar sırasıyla gösterilirken, her bir istasyona gelindiğinde sesli anons yapılır. Örneğin:
+
+1. istasyon: Antakya
+2. istasyon: Kırıkhan
+...
+
+## Test Sonuçları:
+
+### Durum 1: Geçersiz Başlangıç veya Hedef İstasyonu
+
+Kullanıcı geçerli olmayan bir istasyon ismi veya numarası girerse, aşağıdaki gibi bir hata mesajı alınır:
+
+Geçersiz numara! Lütfen listedeki bir numara girin.
+
+### Durum 2: Rota Bulunamaması:
+
+Eğer iki istasyon arasında geçerli bir rota yoksa, şu mesaj gösterilir:
+
+Belirtilen istasyonlar arasında rota bulunamadı.
+
+### Durum 3: Metro Ağı Haritası:
+
+Metro ağını görmek isteyen bir kullanıcı için şu çıktı elde edilir:
+
+Metro ağı haritası gösteriliyor...
+
+Bir harita görüntülenir ve her hattın farklı renkleriyle çizilir.
+
+### Sonuçların Test Edilmesi:
+
+Başlangıç ve hedef istasyonları girildiğinde: Kullanıcı, iki istasyon arasındaki rotayı, aktarmasız ve en hızlı şekilde bulabilir.
+
+Bağlantılar doğru şekilde eklenmeli: İstasyonlar arasında doğru süreler ve bağlantılar olmalıdır.
+
+Animasyonlar düzgün çalışmalı: Rota seçildiğinde, animasyonlu rota doğru şekilde gösterilmeli ve sesli anonslar her istasyon için yapılmalıdır.
+
+Hatalı girişler ele alınmalı: Geçersiz girişlerde uygun hata mesajları verilmelidir.
+
+## Sonuç:
+
+Bu uygulama, metro ağı simülasyonu ile kullanıcıların istasyonlar arasında en hızlı veya en az 
+aktarmalı rotayı bulmalarını sağlar. Kullanıcı dostu etkileşim ve görselleştirme ile metro yolculuklarını daha anlaşılır hale getirmek için tasarlanmıştır.
+
 
 ## 5.Projeyi Geliştirme Fikirleri:
 
