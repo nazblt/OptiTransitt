@@ -141,7 +141,7 @@ Metro simülasyonunun daha gerçekçi olması için istasyonlar arasındaki mesa
 Metro sisteminin daha gerçekçi hale gelmesi için çevresel faktörler ve ışıklandırma eklemek projeyi güzelleştirebilir.
 
 
-### 6. Yapay Zeka ile Trafik Yönetimi:
+### 6. Yapay Zeka ile Trafik Yönetimi:
 
 Metro sistemlerinin yönetiminde yapay zeka kullanımı, trenlerin birbirleriyle olan etkileşimini yönetmek için faydalı olabilir.
 
