@@ -103,7 +103,6 @@ BFS, sadece mesafe hesaplar, A* ise daha stratejik bir yaklaşım kullanır ve d
 ## 4. Örnek Kullanım ve Test Sonuçları:
 
 
-
 ## 5.Projeyi Geliştirme Fikirleri:
 
 ### 1. Dinamik Zaman Yönetimi ve Rotalar:
